@@ -11,7 +11,7 @@ import line from "../src/assets/line.svg"
 import arc1 from "../src/assets/Group 13.svg"
 
 const App = () => {
-  const [isHovered, setIsHovered] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
@@ -31,11 +31,11 @@ const App = () => {
 
 } 
 
- <Text position='absolute' right='34px' bottom='260px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "22px" }}  >Workflows</Text>
-     {  <Text position='absolute' left='60px' bottom='260px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "22px" }}    onMouseEnter={() => setIsHovered(true)} // Set isHovered to true on mouse enter
+ <Text position='absolute' right='54px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workflows</Text>
+     {  <Text position='absolute' left='88px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}    onMouseEnter={() => setIsHovered(true)} // Set isHovered to true on mouse enter
         onMouseLeave={() => setIsHovered(false)} >Models</Text>}
-       <Text position='absolute' left='184px' top='80px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "22px" }}  >Workspaces</Text>
-       <Text position='absolute' left='220px' bottom='140px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "22px" }}  >Data</Text>
+       <Text position='absolute' left='250px' top='80px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workspaces</Text>
+       <Text position='absolute' left='300px' bottom='140px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Data</Text>
 
 </Box>
     </>
