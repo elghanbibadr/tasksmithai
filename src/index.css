@@ -9,6 +9,27 @@ body{
   
 }
 
+
+
+.semiCircle{
+    position:absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 400px;
+    border-radius: 250px 250px 0 0;
+    background-color: #2C3544;
+}
+
+.circle{
+  transform: rotate(-1deg);
+  position:absolute;
+   top:-2px;
+   width:260px;
+   z-index: -99999;
+  left:-165px
+}
 * { 
   position: relative;
     -moz-box-sizing: border-box;
