@@ -22,6 +22,17 @@ body{
     background-color: #2C3544;
 }
 
+
+.custom-link{
+    transform: rotate(-30deg);
+}
+.admin-link{
+    transform: rotate(-20deg);
+}
+.technical-link{
+    transform: rotate(-10deg);
+}
+
 .circle{
   transform: rotate(-1deg);
   position:absolute;
