@@ -4,8 +4,10 @@ import innerImg from "../src/assets/InnerCircleImg.svg"
 import innerImg2 from "../src/assets/cb-dev-logo 4.png"
 import settingIcon from "../src/assets/settingIcon.png"
 import smallCircleIcon from "../src/assets/smallCircle.svg"
-
+import generate from "../src/assets/generate.png"
+import analyze from "../src/assets/analyze.png"
 import menuIcon from "../src/assets/menuIcon.png"
+import modify from "../src/assets/modify.png"
 import { AnimatePresence, Transition, motion } from 'framer-motion'
 import line from "../src/assets/line.svg"
 import arc1 from "../src/assets/Group 13.svg"
@@ -14,7 +16,7 @@ import looper from "../src/assets/looper.svg"
 import looper2 from "../src/assets/looper2.svg"
 import brandlogo from "../src/assets/brandlogo.png"
 const App = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveredArcId, setIsHoveredArcId] = useState("1");
   const transition: Transition = { duration: 0.5, delay: 0.2 };
 
 
@@ -39,15 +41,48 @@ const App = () => {
       
 
       {/* right arc */}
+{isHoveredArcId === "2" && <>
+<Image src={arc2} position="absolute" top="30px" right="-150px" className='arc2' width="270px" />
 
-       <Image src={arc2} position="absolute" top="30px" right="-150px" className='arc2' width="270px" />
+       
+<Box initial={{ opacity: 0, y: -20 }}
+           animate={{ opacity: 1, y: 0 }}
+           as={motion.div} position='absolute' right='-99px' top='60px' transition="0.5 ease-in-out">
+        <Image h="20" position="relative" left="-26px" top="12px" src={generate} alt="" />
+        <Text    textAlign="center" className='link' transform="rotate(-30deg)" fontWeight="500" style={{ fontSize: "24px" }}  >Generate</Text>
+      </Box> 
+
+
+
+<Box initial={{ opacity: 0, y: -20 }}
+           animate={{ opacity: 1, y: 0 }}
+           as={motion.div} position='absolute' right='-120px' top='260px' transition="0.5 ease-in-out">
+                            <Image h="14" src={analyze} alt="" />
+
+        <Text    textAlign="center" className='link' fontWeight="500" style={{ fontSize: "24px" }}  >Analyze</Text>
+      </Box> 
+
+
+<Box initial={{ opacity: 0, y: -20 }}
+           animate={{ opacity: 1, y: 0 }}
+           as={motion.div} position='absolute' right='-90px' top='430px' transition="0.5 ease-in-out">
+                            <Image h="16" src={modify} alt="" />
+
+        <Text transform="rotate(30deg)" position="relative" top="0px" left="-30px"  textAlign="center" className='link' fontWeight="500" style={{ fontSize: "24px" }}  >Modify</Text>
+      </Box> 
+
+
+
+</>}
+     
+
 
 
 
 
        {/* <Image src={arc2} position="absolute" top="300px" right="150px" className='arc3' width="270px" /> */}
 
-      { isHovered && <AnimatePresence>
+      { isHoveredArcId === "1" && <AnimatePresence>
         
         
             <Image transition="0.5 ease-in-out"  src={arc1} className='circle'    width={"260px"} />
@@ -86,9 +121,9 @@ const App = () => {
       {/* </AnimatePresence> */}
       
       
-       <Text position='absolute' right='54px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workflows</Text>
-       {  <Text position='absolute' left='88px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}    onMouseEnter={() => setIsHovered(true)} // Set isHovered to true on mouse enter
-          onMouseLeave={() => setIsHovered(false)} >Models</Text>}
+       <Text position='absolute' right='54px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }} onMouseEnter={() => setIsHoveredArcId("2")} onMouseLeave={() => setIsHoveredArcId("")}  >Workflows</Text>
+       {  <Text position='absolute' left='88px' top='280px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}    onMouseEnter={() => setIsHoveredArcId("1")} // Set isHoveredArcId to true on mouse enter
+          onMouseLeave={() => setIsHoveredArcId("")} >Models</Text>}
          <Text position='absolute' left='250px' top='80px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workspaces</Text>
          <Text position='absolute' left='300px' bottom='140px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Data</Text>
       
