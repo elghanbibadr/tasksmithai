@@ -41,7 +41,15 @@ body{
   top: -52px !important;
   right: -181px !important;
   z-index: -9999 !important;
+  /* display: none; */
+}
 
+.arc3{
+  transform: rotate(90deg);
+  width: 320px !important;
+  top: 280px !important;
+  right: 179px !important;
+  /* top="300px" right="150px" */
 }
 .circle{
   transform: rotate(-1deg);

@@ -17,27 +17,35 @@ const App = () => {
   const [isHovered, setIsHovered] = useState(false);
   const transition: Transition = { duration: 0.5, delay: 0.2 };
 
+
   return (
-    <Flex>
-    <Box width="200px" position="relative" height="100vh" bg="#171C26" >
-      <Image src={brandlogo} />
-       <Image position="absolute" bottom="-10px" left="-90px" src={looper2} />
-       <Flex alignItems="center" position="absolute" bottom="40px" left="13px"  color="white">
+    <Flex height="100vh" flexDirection={["column","column","row"]} >
+    <Box display={"flex"}  alignItems="center"  width={["100%","100%","230px"]} flexDirection={["row","row","column"]} p="3"  justifyContent="space-between" bg="#171C26" >
+      <Image height={["60px","60px","auto"]} width={["120px","120px","100%"]} src={brandlogo} />
+      <Image position="absolute" bottom="-10px" left="-90px" display={["none","none","block"]} src={looper2} />
+
+       <Flex alignItems="center"  mb={{md:"12px"}}  color="white">
         
-        <Text mr="10px">User settings</Text>
-         <Image height="20px"  gap="10px" src={settingIcon} />
+        <Text fontSize={["10px","10","16px"]} mr="10px">User settings</Text>
+         <Image height={["14px","20px"]}  gap="10px" src={settingIcon} />
        </Flex>   
        
         </Box >
-    <Box mx="auto">
-      <Image position="absolute" left="-100px" top="-120px" src={looper} />
-        <Box transform={['scale(0.4)',"scale(0.6)","scale(0.7)" ]}   zIndex='999'  height="680px" width="680px" position='relative'>
+    <Box alignSelf="center"  position="relative" mx={["0","auto"]} top={["-100px","-100px","30px"]}>
+    {/* */}
+      <Image position="absolute" left="-100px" top="-120px"   src={looper} />
+        <Box transform={['scale(0.3)',"scale(0.4)","scale(0.6)","scale(0.6)","scale(0.7)" ]}   zIndex='999'  height="680px" width="680px" position='relative'>
         <Image src={smallCircleIcon} />
       
 
       {/* right arc */}
 
        <Image src={arc2} position="absolute" top="30px" right="-150px" className='arc2' width="270px" />
+
+
+
+
+       {/* <Image src={arc2} position="absolute" top="300px" right="150px" className='arc3' width="270px" /> */}
 
       { isHovered && <AnimatePresence>
         
