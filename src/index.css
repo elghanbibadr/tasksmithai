@@ -37,7 +37,7 @@ body{
 .arc2{
   /* width: 600px !important; */
   transform: rotate(3deg);
-  width: 306px !important;
+  /* width: 306px !important; */
   top: -52px !important;
   right: -181px !important;
   z-index: -9999 !important;
