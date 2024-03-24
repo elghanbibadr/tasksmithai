@@ -1,6 +1,6 @@
 body{
   background-color: #192839 !important;
-
+   overflow: hidden;
 }
 
 
@@ -51,6 +51,21 @@ body{
   right: 179px !important;
   /* top="300px" right="150px" */
 }
+
+
+.btmarc{
+  transform: rotate(3deg);
+  /* width: 900px !important; */
+  position: absolute;
+  top: 434px;
+  left: -58px;
+}
+.circle5{
+transform: rotate(180deg) !important;
+bottom: -70px;
+left:-12px;
+width:930px !important;
+}
 .circle{
   transform: rotate(-1deg);
   position:absolute;
@@ -67,6 +82,8 @@ body{
     padding: 0;
     list-style: none;
 }
+
+
 
 html,
 body {
