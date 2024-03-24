@@ -23,7 +23,7 @@ import searchIcon from '../src/assets/search.svg'
 import toparc from '../src/assets/top arc.svg'
 
 const App = () => {
-  const [isHoveredArcId, setIsHoveredArcId] = useState("1");
+  const [isHoveredArcId, setIsHoveredArcId] = useState("");
   const transition: Transition = { duration: 0.5, delay: 0.2 };
 
 
@@ -41,14 +41,14 @@ const App = () => {
        
         </Box >
     <Box alignSelf="center"  position="relative" mx={["0","auto"]} top={["-100px","-100px","30px"]}>
-    {/* */}
+ 
       <Image position="absolute" left="-100px" top="-120px"   src={looper} />
         <Box transform={['scale(0.3)',"scale(0.4)","scale(0.6)","scale(0.6)","scale(0.7)" ]}   zIndex='999'  height="680px" width="690px" position='relative'>
         <Image src={smallCircleIcon} />
        
   
-{ <>
-{/* <Image src={rightarc} position="absolute" top="-44px" right="-75px" transform='rotate(3deg)' width='275px' /> */}
+{isHoveredArcId ==='2' && <>
+<Image src={rightarc} position="absolute" top="-44px" right="-75px" transform='rotate(3deg)' width='275px' />
       
 <Box initial={{ opacity: 0, y: -20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -57,8 +57,6 @@ const App = () => {
         <Text    textAlign="center" className='link' transform="rotate(-30deg)" fontWeight="500" style={{ fontSize: "24px" }}  >Generate</Text>
       </Box> 
 
-
-
 <Box initial={{ opacity: 0, y: -20 }}
            animate={{ opacity: 1, y: 0 }}
            as={motion.div} position='absolute' right='-46px' top='229px' transition="0.5 ease-in-out">
@@ -66,7 +64,6 @@ const App = () => {
 
         <Text    textAlign="center" className='link' fontWeight="500" style={{ fontSize: "24px" }}  >Analyze</Text>
       </Box> 
-
 
 <Box initial={{ opacity: 0, y: -20 }}
            animate={{ opacity: 1, y: 0 }}
@@ -78,16 +75,8 @@ const App = () => {
      
 
 
-
-
-
-
-      { <AnimatePresence>
-        
-        
-            {/* <Image transition="0.5 ease-in-out"  src={leftarc} className='circle'    width={"290px"} /> */}
-
-
+      {isHoveredArcId === '1' && <AnimatePresence>      
+            <Image transition="0.5 ease-in-out"  src={leftarc} className='circle'    width={"290px"} />
           <Box initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   as={motion.div} position='absolute' left='-47px' top='60px' transition="0.5 ease-in-out">
@@ -121,7 +110,7 @@ const App = () => {
         }     
 
 {/* BUTTOM ARC */}
-   {  <AnimatePresence>          
+   {isHoveredArcId ==='4' &&  <AnimatePresence>          
         <Image transition="0.5 ease-in-out"   src={bottomarc}    className='btmarc' />     
         <Box initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -143,7 +132,7 @@ const App = () => {
     }
 
     {/* TOP ARC */}
-   {  <AnimatePresence>          
+   { isHoveredArcId === '3'  &&  <AnimatePresence>          
         <Image transition="0.5 ease-in-out"   src={toparc}    className='toparc' />     
         <Box initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -168,11 +157,11 @@ const App = () => {
 
  {/* INNER LINKS OF THE CIRLE */}
       
-       <Text position='absolute' right='119px' top='254px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }} onMouseEnter={() => setIsHoveredArcId("2")} onMouseLeave={() => setIsHoveredArcId("")}  >Workflows</Text>
-       {  <Text position='absolute' left='84px' top='248px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}    onMouseEnter={() => setIsHoveredArcId("1")} // Set isHoveredArcId to true on mouse enter
-          onMouseLeave={() => setIsHoveredArcId("")} >Models</Text>}
-         <Text position='absolute' left='250px' top='80px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workspaces</Text>
-         <Text position='absolute' left='280px' bottom='230px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Data</Text>
+       <Text position='absolute' cursor='pointer' right='119px' top='254px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }} onMouseEnter={() => setIsHoveredArcId("2")}  >Workflows</Text>
+       {  <Text cursor='pointer' position='absolute' left='84px' top='248px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}    onMouseEnter={() => setIsHoveredArcId("1")} // Set isHoveredArcId to true on mouse enter
+           >Models</Text>}
+         <Text  onMouseEnter={() => setIsHoveredArcId("3")} cursor='pointer' position='absolute' left='250px' top='80px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Workspaces</Text>
+         <Text cursor='pointer' onMouseEnter={() => setIsHoveredArcId("4")}  position='absolute' left='280px' bottom='230px' textAlign="center" className='link' fontWeight="500" style={{ fontSize: "30px" }}  >Data</Text>
       
         
       </Box>
