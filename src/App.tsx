@@ -16,6 +16,8 @@ import looper from "../src/assets/looper.svg"
 import looper2 from "../src/assets/looper2.svg"
 import brandlogo from "../src/assets/brandlogo.png"
 import bottomarc from '../src/assets/bottom arc.svg'
+import leftarc from '../src/assets/left arc.svg'
+
 const App = () => {
   const [isHoveredArcId, setIsHoveredArcId] = useState("1");
   const transition: Transition = { duration: 0.5, delay: 0.2 };
@@ -82,12 +84,11 @@ const App = () => {
 
 
 
-       {/* <Image src={arc2} position="absolute" top="300px" right="150px" className='arc3' width="270px" /> */}
-
-      { isHoveredArcId === "1" && <AnimatePresence>
+{/* isHoveredArcId === "1"  */}
+      { <AnimatePresence>
         
         
-            <Image transition="0.5 ease-in-out"  src={arc1} className='circle'    width={"230px"} />
+            <Image transition="0.5 ease-in-out"  src={leftarc} className='circle'    width={"240px"} />
 
 
           <Box initial={{ opacity: 0, y: -20 }}
@@ -126,7 +127,7 @@ const App = () => {
    {  <AnimatePresence>
         
         
-        <Image transition="0.5 ease-in-out"  src={bottomarc}    className='btmarc' />
+        <Image transition="0.5 ease-in-out"  display='none' src={bottomarc}    className='btmarc' />
 
 
       

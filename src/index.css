@@ -68,11 +68,10 @@ width:930px !important;
 }
 .circle{
   transform: rotate(-1deg);
-  position:absolute;
-   top:-2px;
-
-   z-index: -99999;
-  left:-165px
+  position: absolute;
+  top: -4px;
+  width: 236px !important;
+  left: -151px;
 }
 * { 
   position: relative;
